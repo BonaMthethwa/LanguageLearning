@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Who Passed</title>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .result-container {
+            margin-top: 50px;
+        }
+        .result-section {
+            margin-bottom: 30px;
+        }
+        .result-header {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .result-list {
+            list-style-type: none;
+        }
+        .result-item {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container result-container">
+        <h1 class="text-center">Students Who Failed</h1>
+        
+        {{#if failed.length}}
+            <div class="result-section">
+                
+                <ul class="result-list">
+                    {{#each failed}}
+                        <li class="result-item">{{this.user_email}} - Score: {{this.score}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        {{else}}
+            <div class="text-center">
+                <p>There are no students who passed.</p>
+            </div>
+        {{/if}}
+
+        <div class="text-center">
+            <a href="/adminCategories" class="btn btn-primary mt-3">Back to categories</a>
+        </div>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

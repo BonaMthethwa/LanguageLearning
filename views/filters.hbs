@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .result-container {
+            margin-top: 50px;
+        }
+        .result-section {
+            margin-bottom: 30px;
+        }
+        .result-header {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .result-list {
+            list-style-type: none;
+        }
+        .result-item {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container result-container">
+        <h1 class="text-center">Reports</h1>
+        
+        
+        <div class="dropdown text-center mb-3">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="reportDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select Report
+    </button>
+    <div class="dropdown-menu" aria-labelledby="reportDropdown">
+        <a class="dropdown-item" href="/passedD" onclick="generateReport('passWithDistinction')">Generate report for users who passed with distinction</a>
+        <a class="dropdown-item" href="/passed" onclick="generateReport('pass')">Generate report for users who passed</a>
+        <a class="dropdown-item" href="/failed" onclick="generateReport('fail')">Generate report for users who failed</a>
+    </div>
+</div>
+
+        
+        <div class="text-center">
+            <a href="/adminCategories" class="btn btn-primary mt-3">Back to categories</a>
+        </div>
+    </div>
+
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        
+        function generateReport(reportType) {
+            
+            document.getElementById('passWithDistinction').style.display = 'none';
+            document.getElementById('pass').style.display = 'none';
+            document.getElementById('fail').style.display = 'none';
+
+            document.getElementById(reportType).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
